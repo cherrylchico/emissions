@@ -1,0 +1,438 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  11pt,
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp} % provide euro and other symbols
+\usepackage{lmodern}
+\usepackage{helvet} % built-in Helvetica clone (no xelatex needed)
+\renewcommand{\familydefault}{\sfdefault} % use sans-serif as the body font
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{newunicodechar}
+\newunicodechar{→}{\textrightarrow}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breaknonspaceingroup,commandchars=\\\{\}}
+\setlength{\emergencystretch}{3em}
+\usepackage{etoolbox}
+\AtBeginEnvironment{longtable}{\footnotesize}
+\usepackage[most]{tcolorbox}
+\renewenvironment{Shaded}{\begin{tcolorbox}[breakable,boxrule=0.4pt,colback=gray!8,colframe=gray!50,arc=2pt,left=5pt,right=5pt,top=4pt,bottom=4pt]}{\end{tcolorbox}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\section{Pacific Maritime Emissions ---
+Documentation}\label{pacific-maritime-emissions-documentation}
+
+\subsection{1. Overview}\label{overview}
+
+This project estimates greenhouse-gas and air-pollutant emissions from
+ships operating in the Exclusive Economic Zones (EEZs) of the Pacific
+Island Countries (PICs), following the bottom-up activity-based method of
+the \href{https://www.imo.org/en/ourwork/Environment/Pages/Fourth-IMO-Greenhouse-Gas-Study-2020.aspx}{Fourth
+IMO GHG Study 2020}. Starting from Automatic Identification System (AIS)
+vessel positions on the UN Global Platform, it builds an hourly
+vessel-activity panel, attaches each vessel's technical specifications
+from the IHS ship register, and reconstructs the engine load and
+operating state of every vessel-hour. Emissions are then computed two
+ways --- a full activity-based calculation for vessels matched to the
+register, and a median-per-type model for the rest --- flagged for
+fishing activity using Global Fishing Watch, and rolled up into monthly
+country and vessel-type statistics that feed the dashboard. The result is
+a per-vessel-hour emissions record covering CO\textsubscript{2}, SOx,
+NOx, CH\textsubscript{4}, CO, N\textsubscript{2}O, NMVOC, PM10, PM2.5,
+and black carbon.
+
+\subsection{2. Data Sources}\label{data-sources}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{AIS (UNGP):} raw satellite/terrestrial vessel positions, read
+  on the UN Global Platform through the \texttt{ais} library
+  (\texttt{af.get\_ais}). Provides position, speed, draught, and
+  navigational status (notebook~A).
+\item
+  \textbf{IHS ship register (UNGP):} vessel identity and technical
+  specifications, read via \texttt{af.read\_ihs\_table} ---
+  \texttt{ShipData.CSV}, \texttt{tblCapacities.CSV},
+  \texttt{tblBoilers.CSV}, and \texttt{tblNameHistory.CSV}. Used both to
+  identify vessels (notebook~A) and to derive engine, fuel, and emission
+  parameters (notebook~B). The IHS version is pinned per run
+  (\texttt{ihs\_version}, e.g.\ \texttt{20260202}).
+\item
+  \textbf{IMF port boundaries:} port-area polygons
+  (\texttt{imf\_port\_boundary.pkl}), used to flag positions inside a
+  port (notebook~A).
+\item
+  \textbf{EEZ and coastal boundaries:} each country's EEZ polygon and a
+  10\,km coastal buffer (\texttt{geoboundary2.pkl}), used to assign
+  positions to a country and to the coast/at-sea zones (notebook~A).
+\item
+  \textbf{Global Fishing Watch (effort):} daily fishing effort by MMSI
+  (\texttt{GFW\_effort\_event/\{year\}.csv}), used to flag fishing
+  vessels and, with gear type, to break out fishing emissions
+  (notebooks~C, D, E).
+\item
+  \textbf{Auxiliary engine and boiler power factors:} tabulated factors
+  from the Third/Fourth IMO studies, pulled as JSON from
+  \href{https://www.gabrielfuentes.org/tables_emissions/ae_ab_power.json}{gabrielfuentes.org}
+  (notebook~B).
+\item
+  \textbf{Method and emission factors:} the Fourth IMO GHG Study 2020,
+  which defines the vessel classes, correction factors, specific fuel
+  consumption baselines, and per-pollutant emission factors.
+\end{itemize}
+
+\subsection{3. Process Flow}\label{process-flow}
+
+The pipeline is a series of notebooks (A--E), each consuming the output
+of the previous stage. All stages run inside the UN Global Platform.
+
+\begin{enumerate}
+\item
+  \textbf{Build the hourly AIS panel (A).} Raw AIS is restricted to the
+  Pacific bounding box and the PIC EEZs, matched to the IHS register to
+  recover a stable \texttt{vessel\_id}, resampled to one record per
+  vessel per hour, and tagged with EEZ, coast, and port flags via Sedona
+  spatial joins. Output: \texttt{hourly\_ais\_v2/}.
+\item
+  \textbf{Prepare vessel specifications (B).} IHS \texttt{ShipData} (with
+  capacities and boilers) is cleaned and gap-filled --- beam, draught,
+  length, capacity/size bin, speed, power, engine RPM, engine type, and
+  fuel type --- then turned into the correction factors, specific
+  fuel-consumption baselines, and pollutant emission factors needed for
+  the calculation. Output: \texttt{ihs\_emissions\_specs\ \{version\}}.
+\item
+  \textbf{Compute emissions, with IHS (C).} The hourly panel is joined to
+  the vessel specs; engine load, power demand, operational phase, and
+  low-load factors are derived; and per-hour emissions of every pollutant
+  (main engine, pilot fuel, auxiliary engine, boiler) are produced.
+  Output: \texttt{emissions\_data/with\_ihs/}.
+\item
+  \textbf{Compute emissions, without IHS (D).} For vessels not matched to
+  the register, a median per-hour emission by AIS vessel group and
+  operational phase is learned from the with-IHS output, then applied to
+  the unmatched vessel-hours. Output: \texttt{emissions\_data/no\_ihs/}.
+\item
+  \textbf{Aggregate statistics (E).} The two emission sets are summed by
+  month, country, vessel type, operational phase, fishing flag, and gear;
+  CO\textsubscript{2}-equivalent totals are computed; and the dashboard
+  tables are written. Output: \texttt{emissions\_data/stats/}.
+\end{enumerate}
+
+\subsection{4. Assumptions}\label{assumptions}
+
+\subsubsection{Vessel identity (AIS to
+IHS)}\label{vessel-identity}
+
+Each AIS vessel is matched to the IHS register on exact IMO/MMSI/name
+criteria, with a fuzzy vessel-name fallback and a name-history pass for
+the remainder. A matched vessel takes the identity
+\texttt{imo-\textless{}LRIMOShipNo\textgreater{}}; an unmatched vessel
+keeps \texttt{mmsi-\textless{}mmsi\textgreater{}} and is routed to the
+without-IHS calculation rather than being assigned a guessed identity.
+The IHS match type is retained for auditing.
+
+\subsubsection{Operational phase}\label{operational-phase}
+
+Each vessel-hour is assigned an operating phase from its speed over
+ground (SOG) and its proximity flags, which then selects the
+auxiliary/boiler power and low-load factors:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{0.45\textwidth}
+  >{\raggedright\arraybackslash}p{0.25\textwidth}@{}}
+\toprule
+\textbf{Condition} & \textbf{Phase} \\
+\midrule
+\endhead
+SOG $\leq$ 1 kn and inside a port & At Berth \\
+SOG $\leq$ 3 kn & Anchored \\
+3 \textless{} SOG $\leq$ 5 kn, near port or coast & Manoeuvring \\
+otherwise & Sea \\
+\bottomrule
+\end{longtable}
+
+\subsubsection{Filling missing vessel
+specifications}\label{filling-missing-specs}
+
+The vessel specifications used in the calculation (beam, draught, length,
+capacity, speed, power, engine RPM) are filled in a fixed order: use the
+IHS reference field where present; otherwise estimate it with a
+single-factor or IMO-style regression on related fields; otherwise fall
+back to the median for the vessel's class and size bin. A value of 0 in
+these fields is treated as missing. Where the WB method departs from the
+IMO demo, it adds further IHS reference fields to the regression ---
+\texttt{BreadthMoulded} for beam, \texttt{LengthRegistered} and
+\texttt{LengthBetweenPerpendicularsLBP} for length, and
+\texttt{Speed}/\texttt{Speedservice} for max speed. Engine RPM is used
+only as a band (slow / medium / high speed), so the band matters rather
+than the exact value. The source of each filled value is recorded in a
+companion \texttt{\_basis} column.
+
+\subsubsection{Deviations from the IMO
+method}\label{imo-deviations}
+
+Two filling rules differ deliberately from the Fourth IMO GHG Study:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Missing capacity.} Vessels whose capacity is unknown are placed
+  in a separate size bin rather than imputed to the median size, then
+  assigned the modal size bin of their vessel class. This avoids giving
+  unknown-capacity vessels a spuriously precise size.
+\item
+  \textbf{Engine type and fuel type.} These are filled \emph{jointly}
+  (most common consistent combination per class and size bin) instead of
+  independently, so that physically inconsistent pairings --- e.g.\ an
+  oil engine (SSD/MSD/HSD) reported with LNG fuel --- are not produced.
+  The IMO assumption that little fuel-type data is missing does not hold
+  well in this dataset.
+\end{itemize}
+
+\subsubsection{Engine, fuel, and emission
+factors}\label{engine-fuel-factors}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Specific fuel consumption (SFC).} Baseline SFC is assigned by
+  engine type, fuel, and engine generation, where generation is a
+  build-year tier split at 1984 and 2001.
+\item
+  \textbf{Auxiliary engine and boiler.} Both are assumed to burn the same
+  fuel as the main engine; their power demand follows the Third IMO GHG
+  Study factors by vessel type and size.
+\item
+  \textbf{Pilot fuel.} LNG engines (LNG-Otto, LNG-Diesel) are assumed to
+  burn an MDO pilot fuel.
+\item
+  \textbf{Fuel sulphur content.} Assumed at 2.6\% for HFO and 0.07\% for
+  MDO; this drives the SOx and PM factors.
+\item
+  \textbf{CO\textsubscript{2} emission factors} (tonnes CO\textsubscript{2}
+  per tonne fuel): HFO 3.114, MDO 3.206, LNG 2.750, Methanol 1.375.
+\end{itemize}
+
+\subsubsection{NOx tier and Emission Control
+Areas}\label{nox-tier}
+
+NOx factors are assigned by engine RPM band and IMO NOx Tier, with the
+tier set from build year (Tier I from 2000, Tier II from 2011, Tier III
+from 2016). The tier values used assume operation \emph{outside} an
+Emission Control Area, so the stricter Tier III limits are not applied
+--- a conservative choice given that the Pacific region is not an ECA.
+
+\subsubsection{Power correction
+factors}\label{correction-factors}
+
+Main-engine power demand is adjusted by a weather correction factor, a
+constant hull-fouling factor (0.917), and a speed correction factor that
+is applied only to large container ships and cruise ships (left at 1 for
+all other vessels).
+
+\subsubsection{Emissions and
+CO\textsubscript{2}-equivalent}\label{emissions-and-co2eq}
+
+Per-hour emissions are scaled by the time gap to the next position
+(capped at 24~hours) so that gaps in coverage do not over- or
+under-count. CO\textsubscript{2}-equivalent uses GWP100 factors ---
+CH\textsubscript{4} $\times$ 27 and N\textsubscript{2}O $\times$ 273 ---
+added to CO2. In code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+df['ch4_co2eq']   = df['_ch4_e'] * 27      # GWP100 (CH4)
+df['n2o_co2_eq']  = df['_n2o_e'] * 273     # GWP100 (N2O)
+df['co2eq_total'] = df['_co2_f'] + df['ch4_co2eq'] + df['n2o_co2_eq']
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Scope and exclusions}\label{scope-and-exclusions}
+
+Coverage is the EEZs of 14 Pacific Island Countries. Longitudes are
+transposed to a 0--360\textdegree{} frame so the area stays contiguous
+across the antimeridian, and the Kiribati sub-regions (Phoenix, Gilbert,
+and Line groups) are reported together as Kiribati. Vessels fuelled by
+ethane or LPG are excluded from the CO\textsubscript{2}/SFC factors, as
+their numbers are negligible.
+
+\subsection{5. Deployment}\label{deployment}
+
+\subsubsection{Requirements}\label{requirements}
+
+\begin{itemize}
+\tightlist
+\item
+  A \textbf{UN Global Platform (UNGP) account}
+  (\href{https://datalab.officialstatistics.org}{datalab.officialstatistics.org}).
+  Unlike a local notebook project, \emph{every} stage here runs inside
+  UNGP, because all of them use the \texttt{ais} library, the Spark
+  cluster, and the AIS/IHS data held on the platform.
+\item
+  \textbf{PySpark with Apache Sedona}, provided by the platform's
+  \texttt{ais} library, for the spatial joins and the distributed
+  emissions calculation.
+\item
+  \textbf{Python 3} with the scientific stack (pandas, numpy, geopandas,
+  scikit-learn) for the driver-side cleaning and aggregation.
+\item
+  \textbf{Global Fishing Watch effort files}
+  (\texttt{GFW\_effort\_event/}) staged in the project storage, and
+  \textbf{outbound internet} for the auxiliary/boiler power-factor JSON.
+\end{itemize}
+
+\subsubsection{Platform notes}\label{platform-notes}
+
+The notebooks run on UNGP's current environment (Onyxia / EMR on EKS with
+Spark Connect, Spark~3.5). Each notebook creates its session with
+\texttt{SparkSession.builder.getOrCreate()} (which reads
+\texttt{SPARK\_REMOTE}), reads AIS and the IHS register through the
+\texttt{ais} library, and writes all project data to the user's personal
+bucket under \texttt{AWS\_WORKING\_DIRECTORY\_PATH}. The shared AIS data
+bucket is read-only.
+
+\subsubsection{Execution}\label{execution}
+
+The notebooks run in order, A through E; each reads the previous stage's
+output and writes the input for the next. Every notebook opens with a
+configuration cell that holds the user inputs in one place --- storage
+paths, the IHS version, and the month ranges to process.
+
+\subsection{6. Files}\label{files}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{0.16\textwidth}
+  >{\raggedright\arraybackslash}p{0.42\textwidth}
+  >{\raggedright\arraybackslash}p{0.40\textwidth}@{}}
+\toprule
+\textbf{Notebook} & \textbf{Reads} & \textbf{Writes} \\
+\midrule
+\endhead
+A AIS Data Prep & Raw AIS (\texttt{af.get\_ais}), IHS
+\texttt{ShipData}/\texttt{tblNameHistory}, \texttt{imf\_port\_boundary.pkl},
+\texttt{geoboundary2.pkl} & \texttt{hourly\_ais\_v2/} \\
+B IHS Specs & IHS \texttt{ShipData}, \texttt{tblCapacities},
+\texttt{tblBoilers}; AE/AB power-factor JSON &
+\texttt{ihs\_emissions\_specs\ \{version\}.pkl} / \texttt{.parquet} \\
+C Emissions wIHS & \texttt{hourly\_ais\_v2/}, IHS specs parquet,
+\texttt{GFW\_effort\_event/\{year\}.csv} &
+\texttt{emissions\_data/with\_ihs/} \\
+D Emissions woIHS & \texttt{emissions\_data/with\_ihs/} (to fit the
+model), \texttt{hourly\_ais\_v2/}, \texttt{GFW\_effort\_event/} &
+\texttt{emissions\_data/model/}, \texttt{emissions\_data/no\_ihs/} \\
+E Emissions Statistics & \texttt{emissions\_data/with\_ihs/},
+\texttt{emissions\_data/no\_ihs/}, \texttt{GFW\_effort\_event/} &
+\texttt{emissions\_data/stats/*.csv} \\
+(Excel) & \texttt{emissions\_data/stats/*.csv} &
+\texttt{Dashboard\ Emissions\ Pacific.xlsx} \\
+\bottomrule
+\end{longtable}
+
+\subsection{7. Output}\label{output}
+
+The deliverable is \texttt{Dashboard\ Emissions\ Pacific.xlsx}, which
+reports estimated emissions --- CO\textsubscript{2},
+CO\textsubscript{2}-equivalent, and the air pollutants (SOx, NOx,
+CH\textsubscript{4}, CO, N\textsubscript{2}O, NMVOC, PM10, PM2.5, black
+carbon) --- over time and by country, vessel type, and fishing gear,
+together with vessel counts. It is assembled from the monthly summary
+tables produced by notebook~E (the \texttt{emissions\_data/stats/}
+outputs). No notebook writes the workbook directly.
+
+\subsection{8. AI Disclosure}\label{ai-disclosure}
+
+Generative AI tools were used to assist in drafting and editing this
+documentation, and in formatting the accompanying notebooks. The
+notebooks themselves are primarily written by the author. All content
+was reviewed by the author, who is responsible for its accuracy.
+
+\end{document}
